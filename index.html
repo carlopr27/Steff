@@ -358,7 +358,27 @@ footer{background:#080F1E;padding:22px 5%;display:flex;align-items:center;justif
 .ig-handle{color:rgba(255,255,255,0.4);font-size:13px;font-weight:400;}
 .ig-ver-mas{color:var(--teal);font-size:13px;font-weight:600;text-decoration:none;}
 .ig-ver-mas:hover{color:#25C691;}
-.ig-posts-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:20px;align-items:start;max-width:900px;margin:0 auto;}
+.ig-posts-grid{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:14px;
+  align-items:start;
+  max-width:1160px;
+  margin:0 auto;
+}
+/* Forzar que cada embed se comporte como phone-width */
+.ig-post-wrapper{
+  border-radius:12px;
+  overflow:hidden;
+  min-width:0; /* evita overflow en grid */
+}
+.ig-post-wrapper .instagram-media{
+  min-width:unset !important;
+  max-width:100% !important;
+  width:100% !important;
+  border-radius:12px !important;
+  margin:0 !important;
+}
 .ig-post-wrapper{border-radius:12px;overflow:hidden;}
 .ig-post-wrapper .instagram-media{min-width:unset!important;max-width:100%!important;width:100%!important;border-radius:12px!important;}
 .ig-placeholder{
@@ -386,7 +406,8 @@ footer{background:#080F1E;padding:22px 5%;display:flex;align-items:center;justif
   transition:opacity .2s;
 }
 .ig-follow-cta:hover{opacity:0.85;}
-@media(max-width:700px){.ig-posts-grid{grid-template-columns:1fr;}}
+@media(max-width:860px){.ig-posts-grid{grid-template-columns:repeat(2,1fr);}}
+@media(max-width:480px){.ig-posts-grid{grid-template-columns:repeat(2,1fr);gap:8px;}}
 
 </style>
 </head>
